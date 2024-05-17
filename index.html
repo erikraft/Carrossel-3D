@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden;
+}
+.rotate_gallery {
+  --size: 180px;
+  display: grid;
+  transform-style: preserve-3d;
+  animation: rotateGallery 25s infinite linear;
+  position: relative;
+}
+@keyframes rotateGallery {
+  0% {
+    transform: perspective(450px) rotateX(-100deg) rotate(0deg);
+  }
+  to {
+    transform: perspective(450px) rotateX(-100deg) rotate(-360deg);
+  }
+}
+
+.rotate_gallery > img:nth-child(1) {
+  --_a: 300deg;
+}
+.rotate_gallery > img:nth-child(2) {
+  --_a: 240deg;
+}
+.rotate_gallery > img:nth-child(3) {
+  --_a: 180deg;
+}
+.rotate_gallery > img:nth-child(4) {
+  --_a: 120deg;
+}
+.rotate_gallery > img:nth-child(5) {
+  --_a: 60deg;
+}
+.rotate_gallery > img:nth-child(6) {
+  --_a: 0deg;
+}
+.rotate_gallery > img {
+    grid-area: 1/1;
+    width: var(--size);
+    aspect-ratio: 1;
+    object-fit: contain;
+    border-radius: 4px 4px 0 0;
+    transform: rotate(var(--_a)) translateY(120%) rotateX(90deg);
+  }
+
+    </style>
+</head>
+<body>
+    <div class="rotate_gallery">
+        <img src="https://wallpaper.forfun.com/fetch/6a/6a1214a3c20916bcb23255969d69d94f.jpeg" alt="codeorcode-image">
+        <img src="https://png.pngtree.com/thumb_back/fh260/background/20230617/pngtree-lakescape-landscape-nature-scenery-hd-image_2950137.jpg" alt="codeorcode-image">
+        <img src="https://img.freepik.com/fotos-premium/paisagem-de-praia-tropical-idilica-para-plano-de-fundo-ou-papel-de-parede-cais-de-madeira-costa-da-ilha-paradisiaca_663265-4844.jpg">
+        <img src="https://i.pinimg.com/originals/87/13/fa/8713fa882f33cd00e1d8a32d8456ae9b.jpg" alt="codeorcode-image">
+        <img src="https://www.papeiseparede.com.br/7635-thickbox_default/papel-de-parede-paisagem-trilha-nas-nuvens.jpg.webp" alt="codeorcode-image">
+        <img src="https://www.papeiseparede.com.br/7634-thickbox_default/papel-de-parede-paisagem-montanhas-geladas.jpg.webp" alt="codeorcode-image">
+    </div>
+</body>
+</html>
